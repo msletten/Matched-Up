@@ -23,6 +23,7 @@
 		08CF2180193E5883009248A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08CF217E193E5883009248A1 /* InfoPlist.strings */; };
 		08CF2182193E5883009248A1 /* Matched_UpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CF2181193E5883009248A1 /* Matched_UpTests.m */; };
 		08CF218D193E592D009248A1 /* MSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CF218C193E592D009248A1 /* MSLoginViewController.m */; };
+		08EAEF4B193FDDBB00805776 /* MSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EAEF4A193FDDBB00805776 /* MSConstants.m */; };
 		DDA96348CF204B18A78B57CD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4847EB2DA945AB9D236C62 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		08CF2181193E5883009248A1 /* Matched_UpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Matched_UpTests.m; sourceTree = "<group>"; };
 		08CF218B193E592D009248A1 /* MSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLoginViewController.h; sourceTree = "<group>"; };
 		08CF218C193E592D009248A1 /* MSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLoginViewController.m; sourceTree = "<group>"; };
+		08EAEF49193FDDBB00805776 /* MSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSConstants.h; sourceTree = "<group>"; };
+		08EAEF4A193FDDBB00805776 /* MSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSConstants.m; sourceTree = "<group>"; };
 		8D9C87D00643481F88F3CC85 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		EC4847EB2DA945AB9D236C62 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +144,8 @@
 		08CF215A193E5883009248A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				08EAEF49193FDDBB00805776 /* MSConstants.h */,
+				08EAEF4A193FDDBB00805776 /* MSConstants.m */,
 				08CF215B193E5883009248A1 /* Matched Up-Info.plist */,
 				08CF215C193E5883009248A1 /* InfoPlist.strings */,
 				08CF215F193E5883009248A1 /* main.m */,
@@ -312,6 +317,7 @@
 				08CF2164193E5883009248A1 /* MSAppDelegate.m in Sources */,
 				08CF216A193E5883009248A1 /* MSFirstViewController.m in Sources */,
 				08CF216D193E5883009248A1 /* MSSecondViewController.m in Sources */,
+				08EAEF4B193FDDBB00805776 /* MSConstants.m in Sources */,
 				08CF218D193E592D009248A1 /* MSLoginViewController.m in Sources */,
 				08CF2160193E5883009248A1 /* main.m in Sources */,
 			);
