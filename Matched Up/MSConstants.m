@@ -13,9 +13,9 @@
 NSString *const kMSUserProfileKey = @"profile";
 NSString *const kMSUserProfileNameKey = @"name";
 NSString *const kMSUserProfileFirstNameKey = @"firstNameKey";
-NSString *const kMSUserProfileLocation = @"location";
-NSString *const kMSUserProfileGender = @"gender";
-NSString *const kMSUserProfileBirthday = @"birthday";
-NSString *const kMSUserProfileInterestedIn = @"interestedIn";
+NSString *const kMSUserProfileLocationKey = @"location";
+NSString *const kMSUserProfileGenderKey = @"gender";
+NSString *const kMSUserProfileBirthdayKey = @"birthday";
+NSString *const kMSUserProfileInterestedInKey = @"interestedIn";
 
 @end

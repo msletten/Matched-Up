@@ -78,36 +78,35 @@
     FBRequest *request = [FBRequest requestForMe];
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error)
     {
-        NSLog(@"%@",result);
         if (!error)
         {
             NSDictionary *userDictionary = (NSDictionary *)result;
             NSMutableDictionary *userProfile = [[NSMutableDictionary alloc] initWithCapacity:7];
             if (userDictionary[@"name"])
             {
-                userProfile[@"name"] = userDictionary[@"name"];
+                userProfile[kMSUserProfileNameKey] = userDictionary[@"name"];
             }
             if (userDictionary[@"first_name"])
             {
-                userProfile[@"first_name"] = userDictionary[@"first_name"];
+                userProfile[kMSUserProfileFirstNameKey] = userDictionary[@"first_name"];
             }
             if (userDictionary[@"location"][@"name"])
             {
-                userProfile[@"location"] = userDictionary[@"location"][@"name"];
+                userProfile[kMSUserProfileLocationKey] = userDictionary[@"location"][@"name"];
             }
             if (userDictionary[@"gender"])
             {
-                userProfile[@"gender"] = userDictionary[@"gender"];
+                userProfile[kMSUserProfileGenderKey] = userDictionary[@"gender"];
             }
             if (userDictionary[@"birthday"])
             {
-                userProfile[@"birthday"] = userDictionary[@"birthday"];
+                userProfile[kMSUserProfileBirthdayKey] = userDictionary[@"birthday"];
             }
             if (userDictionary[@"interested_in"])
             {
-                userProfile[@"interested_in"] = userDictionary[@"interested_in"];
+                userProfile[kMSUserProfileInterestedInKey] = userDictionary[@"interested_in"];
             }
-            [[PFUser currentUser] setObject:userProfile forKey:@"profile"];
+            [[PFUser currentUser] setObject:userProfile forKey:kMSUserProfileKey];
             [[PFUser currentUser] saveInBackground];
         }
         else

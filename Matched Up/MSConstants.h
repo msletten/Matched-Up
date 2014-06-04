@@ -15,9 +15,9 @@
 extern NSString *const kMSUserProfileKey;
 extern NSString *const kMSUserProfileNameKey;
 extern NSString *const kMSUserProfileFirstNameKey;
-extern NSString *const kMSUserProfileLocation;
-extern NSString *const kMSUserProfileGender;
-extern NSString *const kMSUserProfileBirthday;
-extern NSString *const kMSUserProfileInterestedIn;
+extern NSString *const kMSUserProfileLocationKey;
+extern NSString *const kMSUserProfileGenderKey;
+extern NSString *const kMSUserProfileBirthdayKey;
+extern NSString *const kMSUserProfileInterestedInKey;
 
 @end
