@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08CAFC2F1946599600B83B52 /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC2E1946599600B83B52 /* MSHomeViewController.m */; };
+		08CAFC33194661C300B83B52 /* MSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC32194661C300B83B52 /* MSSettingsViewController.m */; };
+		08CAFC371946649000B83B52 /* MSEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC361946649000B83B52 /* MSEditProfileViewController.m */; };
+		08CAFC3B1946676E00B83B52 /* MSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC3A1946676E00B83B52 /* MSProfileViewController.m */; };
 		08CF2154193E5883009248A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CF2153193E5883009248A1 /* Foundation.framework */; };
 		08CF2156193E5883009248A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CF2155193E5883009248A1 /* CoreGraphics.framework */; };
 		08CF2158193E5883009248A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CF2157193E5883009248A1 /* UIKit.framework */; };
@@ -14,8 +18,6 @@
 		08CF2160193E5883009248A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CF215F193E5883009248A1 /* main.m */; };
 		08CF2164193E5883009248A1 /* MSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CF2163193E5883009248A1 /* MSAppDelegate.m */; };
 		08CF2167193E5883009248A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08CF2165193E5883009248A1 /* Main.storyboard */; };
-		08CF216A193E5883009248A1 /* MSFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CF2169193E5883009248A1 /* MSFirstViewController.m */; };
-		08CF216D193E5883009248A1 /* MSSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CF216C193E5883009248A1 /* MSSecondViewController.m */; };
 		08CF216F193E5883009248A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08CF216E193E5883009248A1 /* Images.xcassets */; };
 		08CF2176193E5883009248A1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CF2175193E5883009248A1 /* XCTest.framework */; };
 		08CF2177193E5883009248A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CF2153193E5883009248A1 /* Foundation.framework */; };
@@ -38,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08CAFC2D1946599600B83B52 /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
+		08CAFC2E1946599600B83B52 /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
+		08CAFC31194661C300B83B52 /* MSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSettingsViewController.h; sourceTree = "<group>"; };
+		08CAFC32194661C300B83B52 /* MSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSettingsViewController.m; sourceTree = "<group>"; };
+		08CAFC351946649000B83B52 /* MSEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEditProfileViewController.h; sourceTree = "<group>"; };
+		08CAFC361946649000B83B52 /* MSEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEditProfileViewController.m; sourceTree = "<group>"; };
+		08CAFC391946676E00B83B52 /* MSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSProfileViewController.h; sourceTree = "<group>"; };
+		08CAFC3A1946676E00B83B52 /* MSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSProfileViewController.m; sourceTree = "<group>"; };
 		08CF2150193E5883009248A1 /* Matched Up.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matched Up.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08CF2153193E5883009248A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08CF2155193E5883009248A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,10 +59,6 @@
 		08CF2162193E5883009248A1 /* MSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSAppDelegate.h; sourceTree = "<group>"; };
 		08CF2163193E5883009248A1 /* MSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSAppDelegate.m; sourceTree = "<group>"; };
 		08CF2166193E5883009248A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		08CF2168193E5883009248A1 /* MSFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSFirstViewController.h; sourceTree = "<group>"; };
-		08CF2169193E5883009248A1 /* MSFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSFirstViewController.m; sourceTree = "<group>"; };
-		08CF216B193E5883009248A1 /* MSSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSecondViewController.h; sourceTree = "<group>"; };
-		08CF216C193E5883009248A1 /* MSSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSecondViewController.m; sourceTree = "<group>"; };
 		08CF216E193E5883009248A1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		08CF2174193E5883009248A1 /* Matched UpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Matched UpTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08CF2175193E5883009248A1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -92,6 +98,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08CAFC301946599B00B83B52 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				08CAFC2D1946599600B83B52 /* MSHomeViewController.h */,
+				08CAFC2E1946599600B83B52 /* MSHomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		08CAFC34194661C700B83B52 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				08CAFC31194661C300B83B52 /* MSSettingsViewController.h */,
+				08CAFC32194661C300B83B52 /* MSSettingsViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		08CAFC381946649400B83B52 /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				08CAFC351946649000B83B52 /* MSEditProfileViewController.h */,
+				08CAFC361946649000B83B52 /* MSEditProfileViewController.m */,
+			);
+			name = "Edit Profile";
+			sourceTree = "<group>";
+		};
+		08CAFC3C1946678200B83B52 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				08CAFC391946676E00B83B52 /* MSProfileViewController.h */,
+				08CAFC3A1946676E00B83B52 /* MSProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		08CF2147193E5883009248A1 = {
 			isa = PBXGroup;
 			children = (
@@ -131,10 +173,10 @@
 				08CF2163193E5883009248A1 /* MSAppDelegate.m */,
 				08CF2165193E5883009248A1 /* Main.storyboard */,
 				08CF218E193E5937009248A1 /* Login */,
-				08CF2168193E5883009248A1 /* MSFirstViewController.h */,
-				08CF2169193E5883009248A1 /* MSFirstViewController.m */,
-				08CF216B193E5883009248A1 /* MSSecondViewController.h */,
-				08CF216C193E5883009248A1 /* MSSecondViewController.m */,
+				08CAFC301946599B00B83B52 /* Home */,
+				08CAFC34194661C700B83B52 /* Settings */,
+				08CAFC381946649400B83B52 /* Edit Profile */,
+				08CAFC3C1946678200B83B52 /* Profile */,
 				08CF216E193E5883009248A1 /* Images.xcassets */,
 				08CF215A193E5883009248A1 /* Supporting Files */,
 			);
@@ -314,12 +356,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08CAFC2F1946599600B83B52 /* MSHomeViewController.m in Sources */,
 				08CF2164193E5883009248A1 /* MSAppDelegate.m in Sources */,
-				08CF216A193E5883009248A1 /* MSFirstViewController.m in Sources */,
-				08CF216D193E5883009248A1 /* MSSecondViewController.m in Sources */,
 				08EAEF4B193FDDBB00805776 /* MSConstants.m in Sources */,
 				08CF218D193E592D009248A1 /* MSLoginViewController.m in Sources */,
+				08CAFC3B1946676E00B83B52 /* MSProfileViewController.m in Sources */,
+				08CAFC371946649000B83B52 /* MSEditProfileViewController.m in Sources */,
 				08CF2160193E5883009248A1 /* main.m in Sources */,
+				08CAFC33194661C300B83B52 /* MSSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

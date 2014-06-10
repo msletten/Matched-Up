@@ -41,7 +41,7 @@
     {
         [self updateUserInformation];
         NSLog(@"the user is already signed in");
-        [self performSegueWithIdentifier:@"loginToTabBarSegue" sender:self];
+        [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
     }
 }
 
@@ -75,11 +75,11 @@
                 [alertView show];
             }
         }
-        else
-        {
+            else
+            {
             [self updateUserInformation];
-            [self performSegueWithIdentifier:@"loginToTabBarSegue" sender:self];
-        }
+            [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
+            }
     }];
 }
 
@@ -98,7 +98,7 @@
             NSString *facebookID = userDictionary[@"id"];
             NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
             
-            NSMutableDictionary *userProfile = [[NSMutableDictionary alloc] initWithCapacity:7];
+            NSMutableDictionary *userProfile = [[NSMutableDictionary alloc] initWithCapacity:8];
             if (userDictionary[@"name"])
             {
                 userProfile[kMSUserProfileNameKey] = userDictionary[@"name"];
@@ -118,10 +118,21 @@
             if (userDictionary[@"birthday"])
             {
                 userProfile[kMSUserProfileBirthdayKey] = userDictionary[@"birthday"];
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                [formatter setDateStyle:NSDateFormatterShortStyle];
+                NSDate *date = [formatter dateFromString:userDictionary[@"birthday"]];
+                NSDate *now = [NSDate date];
+                NSTimeInterval seconds = [now timeIntervalSinceDate:date];
+                int age = seconds/31536000;
+                userProfile[kMSUserProfileAgeKey] = @(age);
             }
             if (userDictionary[@"interested_in"])
             {
                 userProfile[kMSUserProfileInterestedInKey] = userDictionary[@"interested_in"];
+            }
+            if (userDictionary[@"relationship_status"])
+            {
+                userProfile[kMSUserProfileRelationshipStatusKey] = userDictionary[@"relationship_status"];
             }
             if ([pictureURL absoluteString])
             {
