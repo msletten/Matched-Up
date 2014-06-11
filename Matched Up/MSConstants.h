@@ -13,6 +13,8 @@
 //The app will have some global constants that will be useful to reference keys. These are below and work after importing this file into the project pch file.
 #pragma mark - User Class
 
+extern NSString *const kMSUserTagLineKey;
+
 extern NSString *const kMSUserProfileKey;
 extern NSString *const kMSUserProfileNameKey;
 extern NSString *const kMSUserProfileFirstNameKey;
@@ -29,5 +31,16 @@ extern NSString *const kMSUserProfileAgeKey;
 extern NSString *const kMSPhotoClassKey;
 extern NSString *const kMSPhotoUserKey;
 extern NSString *const kMSPhotoPictureKey;
+
+#pragma mark - Activity Class
+
+extern NSString *const kMSActivityClassKey;
+extern NSString *const kMSActivityTypeKey;
+extern NSString *const kMSActivityFromUserKey;
+extern NSString *const kMSActivityToUserKey;
+extern NSString *const kMSActivityPhotoKey;
+extern NSString *const kMSActivityTypeLikeKey;
+extern NSString *const kMSActivityTypeDislikeKey;
+
 
 @end
