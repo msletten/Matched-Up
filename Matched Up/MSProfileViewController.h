@@ -10,4 +10,6 @@
 
 @interface MSProfileViewController : UIViewController
 
+@property (strong, nonatomic) PFObject *profilePhoto;
+
 @end

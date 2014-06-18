@@ -316,7 +316,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="xo8-l4-mQT"/>
                     <connections>
-                        <outlet property="ageLabel" destination="dZ3-pD-Hts" id="KqM-43-qY1"/>
+                        <outlet property="ageLabel" destination="dZ3-pD-Hts" id="jrU-bJ-Tgy"/>
                         <outlet property="ageSlider" destination="k3h-Ei-pjC" id="hTA-RX-DkF"/>
                         <outlet property="editProfileButton" destination="Ocu-dH-dSf" id="tdq-Kx-LPg"/>
                         <outlet property="logoutButton" destination="auT-0x-lbW" id="2fx-vC-cf3"/>

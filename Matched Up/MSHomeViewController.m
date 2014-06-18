@@ -7,6 +7,8 @@
 //
 
 #import "MSHomeViewController.h"
+#import "MSTestUser.h"
+#import "MSProfileViewController.h"
 
 @interface MSHomeViewController ()
 
@@ -47,6 +49,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [MSTestUser saveTestUserToParse];
+    
     self.likeButton.enabled = NO;
     self.dislikeButton.enabled = NO;
     self.infoButton.enabled = NO;
@@ -54,6 +58,7 @@
     self.currentPhotoIndex = 0;
     
     PFQuery *query = [PFQuery queryWithClassName:kMSPhotoClassKey];
+    [query whereKey:@"user" notEqualTo:[PFUser currentUser]];
     [query includeKey:kMSPhotoUserKey];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     {
@@ -66,6 +71,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"homeToProfileSegue"])
+    {
+        MSProfileViewController *profileVC = segue.destinationViewController;
+        profileVC.profilePhoto = self.userPhoto;
+    }
 }
 
 #pragma mark - IBActions
@@ -82,6 +96,7 @@
 }
 - (IBAction)infoButtonPressed:(UIButton *)sender
 {
+    [self performSegueWithIdentifier:@"homeToProfileSegue" sender:nil];
 }
 - (IBAction)dislikeButtonPressed:(UIButton *)sender
 {
@@ -148,6 +163,7 @@
                 }
                 self.likeButton.enabled = YES;
                 self.dislikeButton.enabled = YES;
+                self.infoButton.enabled = YES;
             }
         }];
     }

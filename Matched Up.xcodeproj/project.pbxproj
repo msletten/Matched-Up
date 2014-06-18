@@ -11,6 +11,8 @@
 		08CAFC33194661C300B83B52 /* MSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC32194661C300B83B52 /* MSSettingsViewController.m */; };
 		08CAFC371946649000B83B52 /* MSEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC361946649000B83B52 /* MSEditProfileViewController.m */; };
 		08CAFC3B1946676E00B83B52 /* MSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC3A1946676E00B83B52 /* MSProfileViewController.m */; };
+		08CAFCF3194A735700B83B52 /* MSTestUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFCF2194A735700B83B52 /* MSTestUser.m */; };
+		08CAFCF9194A746B00B83B52 /* Haberdash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08CAFCF8194A746B00B83B52 /* Haberdash.jpg */; };
 		08CF2154193E5883009248A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CF2153193E5883009248A1 /* Foundation.framework */; };
 		08CF2156193E5883009248A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CF2155193E5883009248A1 /* CoreGraphics.framework */; };
 		08CF2158193E5883009248A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CF2157193E5883009248A1 /* UIKit.framework */; };
@@ -48,6 +50,9 @@
 		08CAFC361946649000B83B52 /* MSEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEditProfileViewController.m; sourceTree = "<group>"; };
 		08CAFC391946676E00B83B52 /* MSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSProfileViewController.h; sourceTree = "<group>"; };
 		08CAFC3A1946676E00B83B52 /* MSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSProfileViewController.m; sourceTree = "<group>"; };
+		08CAFCF1194A735700B83B52 /* MSTestUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTestUser.h; sourceTree = "<group>"; };
+		08CAFCF2194A735700B83B52 /* MSTestUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTestUser.m; sourceTree = "<group>"; };
+		08CAFCF8194A746B00B83B52 /* Haberdash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Haberdash.jpg; sourceTree = "<group>"; };
 		08CF2150193E5883009248A1 /* Matched Up.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matched Up.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08CF2153193E5883009248A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08CF2155193E5883009248A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +139,16 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		08CAFCF5194A73C200B83B52 /* CreateParseUser */ = {
+			isa = PBXGroup;
+			children = (
+				08CAFCF1194A735700B83B52 /* MSTestUser.h */,
+				08CAFCF2194A735700B83B52 /* MSTestUser.m */,
+			);
+			name = CreateParseUser;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		08CF2147193E5883009248A1 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +192,7 @@
 				08CAFC34194661C700B83B52 /* Settings */,
 				08CAFC381946649400B83B52 /* Edit Profile */,
 				08CAFC3C1946678200B83B52 /* Profile */,
+				08CAFCF5194A73C200B83B52 /* CreateParseUser */,
 				08CF216E193E5883009248A1 /* Images.xcassets */,
 				08CF215A193E5883009248A1 /* Supporting Files */,
 			);
@@ -186,6 +202,7 @@
 		08CF215A193E5883009248A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				08CAFCF8194A746B00B83B52 /* Haberdash.jpg */,
 				08EAEF49193FDDBB00805776 /* MSConstants.h */,
 				08EAEF4A193FDDBB00805776 /* MSConstants.m */,
 				08CF215B193E5883009248A1 /* Matched Up-Info.plist */,
@@ -304,6 +321,7 @@
 			files = (
 				08CF216F193E5883009248A1 /* Images.xcassets in Resources */,
 				08CF215E193E5883009248A1 /* InfoPlist.strings in Resources */,
+				08CAFCF9194A746B00B83B52 /* Haberdash.jpg in Resources */,
 				08CF2167193E5883009248A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +380,7 @@
 				08CF218D193E592D009248A1 /* MSLoginViewController.m in Sources */,
 				08CAFC3B1946676E00B83B52 /* MSProfileViewController.m in Sources */,
 				08CAFC371946649000B83B52 /* MSEditProfileViewController.m in Sources */,
+				08CAFCF3194A735700B83B52 /* MSTestUser.m in Sources */,
 				08CF2160193E5883009248A1 /* main.m in Sources */,
 				08CAFC33194661C300B83B52 /* MSSettingsViewController.m in Sources */,
 			);
