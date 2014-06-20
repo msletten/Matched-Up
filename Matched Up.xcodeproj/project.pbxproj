@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0840B76D1954AC9D008E6D3C /* MSChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840B76C1954AC9D008E6D3C /* MSChatViewController.m */; };
 		084A5F06195350BE008EB2CA /* MSMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084A5F05195350BE008EB2CA /* MSMatchViewController.m */; };
 		084A5F0A1953AB70008EB2CA /* MSMatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084A5F091953AB70008EB2CA /* MSMatchesViewController.m */; };
 		08CAFC2F1946599600B83B52 /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC2E1946599600B83B52 /* MSHomeViewController.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0840B76B1954AC9D008E6D3C /* MSChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSChatViewController.h; sourceTree = "<group>"; };
+		0840B76C1954AC9D008E6D3C /* MSChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSChatViewController.m; sourceTree = "<group>"; };
 		084A5F04195350BE008EB2CA /* MSMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMatchViewController.h; sourceTree = "<group>"; };
 		084A5F05195350BE008EB2CA /* MSMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMatchViewController.m; sourceTree = "<group>"; };
 		084A5F081953AB70008EB2CA /* MSMatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMatchesViewController.h; sourceTree = "<group>"; };
@@ -109,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0840B76A1954AAC7008E6D3C /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				0840B76B1954AC9D008E6D3C /* MSChatViewController.h */,
+				0840B76C1954AC9D008E6D3C /* MSChatViewController.m */,
+			);
+			name = Chats;
+			sourceTree = "<group>";
+		};
 		084A5F07195350C7008EB2CA /* Match */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 				08CAFC3C1946678200B83B52 /* Profile */,
 				084A5F07195350C7008EB2CA /* Match */,
 				084A5F0B1953AB75008EB2CA /* Matches */,
+				0840B76A1954AAC7008E6D3C /* Chats */,
 				08CAFCF5194A73C200B83B52 /* CreateParseUser */,
 				08CF216E193E5883009248A1 /* Images.xcassets */,
 				08CF215A193E5883009248A1 /* Supporting Files */,
@@ -404,6 +417,7 @@
 				08CF2164193E5883009248A1 /* MSAppDelegate.m in Sources */,
 				084A5F06195350BE008EB2CA /* MSMatchViewController.m in Sources */,
 				08EAEF4B193FDDBB00805776 /* MSConstants.m in Sources */,
+				0840B76D1954AC9D008E6D3C /* MSChatViewController.m in Sources */,
 				08CF218D193E592D009248A1 /* MSLoginViewController.m in Sources */,
 				084A5F0A1953AB70008EB2CA /* MSMatchesViewController.m in Sources */,
 				08CAFC3B1946676E00B83B52 /* MSProfileViewController.m in Sources */,

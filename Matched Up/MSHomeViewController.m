@@ -9,8 +9,9 @@
 #import "MSHomeViewController.h"
 #import "MSTestUser.h"
 #import "MSProfileViewController.h"
+#import "MSMatchViewController.h"
 
-@interface MSHomeViewController ()
+@interface MSHomeViewController () <MSMatchViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
@@ -72,13 +73,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//When the user presses the view chats button, we need to show all the matches in a table. The way to do this is to create a delegate to the match view controller so it dismisses itself.
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"homeToProfileSegue"])
     {
         MSProfileViewController *profileVC = segue.destinationViewController;
         profileVC.profilePhoto = self.userPhoto;
+    }
+    else if ([segue.identifier isEqualToString:@"homeToMatchSegue"])
+    {
+        MSMatchViewController *matchVC = segue.destinationViewController;
+        matchVC.matchedUserImage = self.photoImageView.image;
+        matchVC.matchVCDelegate = self;
     }
 }
 
@@ -204,6 +211,7 @@
         self.isLikedByCurrentUser = YES;
         self.isDislikedByCurrentUser = NO;
         [self.activities addObject:likeActivity];
+        [self checkForPhotoUserLikes];
         [self setupNextPhoto];
     }];
 }
@@ -266,6 +274,58 @@
     {
         [self saveDislike];
     }
+}
+//We need a method to check whether another user has liked you, the current user. If you subsequently like that user back, then a match will be created. So let's see how we check if the other user has liked our current user with Parse. We use constraints to only return liked activities between two users.
+- (void)checkForPhotoUserLikes
+{
+    PFQuery *query = [PFQuery queryWithClassName:kMSActivityClassKey];
+    [query whereKey:kMSActivityFromUserKey equalTo:self.userPhoto[kMSPhotoUserKey]];
+    [query whereKey:kMSActivityToUserKey equalTo:[PFUser currentUser]];
+    [query whereKey:kMSActivityTypeKey equalTo:kMSActivityTypeLikeKey];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    {
+        if ([objects count] > 0)
+        {
+            [self createChatRoom];
+        }
+    }];
+}
+//In the last video you checked for likes. If there are likes then we need to open a chatroom between these two users. Parse makes chat extremely easy. The idea is that you are telling Parse to open a chatroom between two users (current user and the owner of the liked photo). Why do we need the inverse chatroom? For our chatrooms the current user can be in either the user1 or user2 columns, so we need to check both.
+- (void)createChatRoom
+{
+    //NSLog(@"create called");
+    PFQuery *queryForChatRoom = [PFQuery queryWithClassName:@"ChatRoom"];
+    [queryForChatRoom whereKey:@"user1" equalTo:[PFUser currentUser]];
+    [queryForChatRoom whereKey:@"user2" equalTo:self.userPhoto[kMSPhotoUserKey]];
+    
+    PFQuery *queryForChatRoomInverse = [PFQuery queryWithClassName:@"ChatRoom"];
+    [queryForChatRoomInverse whereKey:@"user1" equalTo:self.userPhoto[kMSPhotoUserKey]];
+    [queryForChatRoomInverse whereKey:@"user2" equalTo:[PFUser currentUser]];
+    
+    PFQuery *combinedQuery = [PFQuery orQueryWithSubqueries:@[queryForChatRoom, queryForChatRoomInverse]];
+    [combinedQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    {
+        if ([objects count] == 0)
+        {
+            PFObject *chatroom = [PFObject objectWithClassName:@"ChatRoom"];
+            [chatroom setObject:[PFUser currentUser] forKey:@"user1"];
+            [chatroom setObject:self.userPhoto[kMSPhotoUserKey] forKey:@"user2"];
+            [chatroom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+            {
+                [self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
+            }];
+        }
+    }];
+}
+
+#pragma mark - MSMatchViewControllerDelegate
+
+- (void)presentMatchesViewController
+{
+    [self dismissViewControllerAnimated:NO completion:^
+    {
+        [self performSegueWithIdentifier:@"homeToMatchesSegue" sender:nil];
+    }];
 }
 
 

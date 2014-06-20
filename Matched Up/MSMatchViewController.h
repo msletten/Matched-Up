@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MSMatchViewControllerDelegate <NSObject>
+
+- (void)presentMatchesViewController;
+
+@end
+
 @interface MSMatchViewController : UIViewController
+
+@property (strong, nonatomic) UIImage *matchedUserImage;
+
+@property (weak) id <MSMatchViewControllerDelegate> matchVCDelegate;
 
 @end
