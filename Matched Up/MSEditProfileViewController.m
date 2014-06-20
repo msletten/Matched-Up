@@ -61,6 +61,9 @@
 
 - (IBAction)saveBarButtonPressed:(UIBarButtonItem *)sender
 {
+    [[PFUser currentUser] setObject:self.tagLineTextView.text forKey:kMSUserTagLineKey];
+    [[PFUser currentUser] saveInBackground];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

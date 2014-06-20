@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084A5F06195350BE008EB2CA /* MSMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084A5F05195350BE008EB2CA /* MSMatchViewController.m */; };
+		084A5F0A1953AB70008EB2CA /* MSMatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084A5F091953AB70008EB2CA /* MSMatchesViewController.m */; };
 		08CAFC2F1946599600B83B52 /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC2E1946599600B83B52 /* MSHomeViewController.m */; };
 		08CAFC33194661C300B83B52 /* MSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC32194661C300B83B52 /* MSSettingsViewController.m */; };
 		08CAFC371946649000B83B52 /* MSEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC361946649000B83B52 /* MSEditProfileViewController.m */; };
@@ -42,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084A5F04195350BE008EB2CA /* MSMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMatchViewController.h; sourceTree = "<group>"; };
+		084A5F05195350BE008EB2CA /* MSMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMatchViewController.m; sourceTree = "<group>"; };
+		084A5F081953AB70008EB2CA /* MSMatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMatchesViewController.h; sourceTree = "<group>"; };
+		084A5F091953AB70008EB2CA /* MSMatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMatchesViewController.m; sourceTree = "<group>"; };
 		08CAFC2D1946599600B83B52 /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
 		08CAFC2E1946599600B83B52 /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
 		08CAFC31194661C300B83B52 /* MSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSettingsViewController.h; sourceTree = "<group>"; };
@@ -103,6 +109,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		084A5F07195350C7008EB2CA /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				084A5F04195350BE008EB2CA /* MSMatchViewController.h */,
+				084A5F05195350BE008EB2CA /* MSMatchViewController.m */,
+			);
+			name = Match;
+			sourceTree = "<group>";
+		};
+		084A5F0B1953AB75008EB2CA /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				084A5F081953AB70008EB2CA /* MSMatchesViewController.h */,
+				084A5F091953AB70008EB2CA /* MSMatchesViewController.m */,
+			);
+			name = Matches;
+			sourceTree = "<group>";
+		};
 		08CAFC301946599B00B83B52 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +216,8 @@
 				08CAFC34194661C700B83B52 /* Settings */,
 				08CAFC381946649400B83B52 /* Edit Profile */,
 				08CAFC3C1946678200B83B52 /* Profile */,
+				084A5F07195350C7008EB2CA /* Match */,
+				084A5F0B1953AB75008EB2CA /* Matches */,
 				08CAFCF5194A73C200B83B52 /* CreateParseUser */,
 				08CF216E193E5883009248A1 /* Images.xcassets */,
 				08CF215A193E5883009248A1 /* Supporting Files */,
@@ -376,8 +402,10 @@
 			files = (
 				08CAFC2F1946599600B83B52 /* MSHomeViewController.m in Sources */,
 				08CF2164193E5883009248A1 /* MSAppDelegate.m in Sources */,
+				084A5F06195350BE008EB2CA /* MSMatchViewController.m in Sources */,
 				08EAEF4B193FDDBB00805776 /* MSConstants.m in Sources */,
 				08CF218D193E592D009248A1 /* MSLoginViewController.m in Sources */,
+				084A5F0A1953AB70008EB2CA /* MSMatchesViewController.m in Sources */,
 				08CAFC3B1946676E00B83B52 /* MSProfileViewController.m in Sources */,
 				08CAFC371946649000B83B52 /* MSEditProfileViewController.m in Sources */,
 				08CAFCF3194A735700B83B52 /* MSTestUser.m in Sources */,
