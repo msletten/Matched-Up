@@ -14,6 +14,7 @@
 		03D0D8B7ABCD4431B030949C /* FBDialogClosePNG.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DEF4CC6220D465F97C469D6 /* FBDialogClosePNG.h */; };
 		057427F6090D4E86A9799C61 /* JSDismissiveTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC791FD07494038A14D5904 /* JSDismissiveTextView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		074A4454E8D94579B67F911E /* FBBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B998C3BA5C47068991E454 /* FBBase64.h */; };
+		084A5F9419549FA4008EB2CA /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A5F9319549FA4008EB2CA /* libz.1.1.3.dylib */; };
 		0855C1D4A33042EB9A0A8B05 /* FBURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B912FA24A27417BA9FA7BB4 /* FBURLConnection.m */; };
 		099A9443DB2F4243B1C87BE6 /* FBAppBridgeTypeToJSONConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 11CB76DCF27B404F8B689979 /* FBAppBridgeTypeToJSONConverter.h */; };
 		0A7526E9B42F482295FB915D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6908417C9D024A5BB798FC94 /* Foundation.framework */; };
@@ -391,6 +392,7 @@
 		07BEB9FEE012438AA143FEAD /* bubble-tailless@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "bubble-tailless@2x.png"; path = "JSMessagesViewController/Resources/Images/bubble-flat/bubble-tailless@2x.png"; sourceTree = "<group>"; };
 		07D7CE2DFD1B47FFA0CF6C40 /* message-sent.aiff */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.aiff; name = "message-sent.aiff"; path = "JSMessagesViewController/Resources/Sounds/message-sent.aiff"; sourceTree = "<group>"; };
 		07F1164781234ECDA2D2173F /* Pods-JSMessagesViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JSMessagesViewController-dummy.m"; sourceTree = "<group>"; };
+		084A5F9319549FA4008EB2CA /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libz.1.1.3.dylib; sourceTree = "<group>"; };
 		0869D6CD85694E4F82588C15 /* FBDataDiskCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBDataDiskCache.m; path = src/Core/FBDataDiskCache.m; sourceTree = "<group>"; };
 		08F904C1980541F2B65575C2 /* FBAudioResourceLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBAudioResourceLoader.m; path = src/Core/FBAudioResourceLoader.m; sourceTree = "<group>"; };
 		09D229C18BDA4E2A9919A05D /* FBSessionFacebookAppWebLoginStategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSessionFacebookAppWebLoginStategy.m; path = src/FBSessionFacebookAppWebLoginStategy.m; sourceTree = "<group>"; };
@@ -808,6 +810,7 @@
 				5E17D2978FA74B568F184F33 /* libPods-Facebook-iOS-SDK.a in Frameworks */,
 				7DC21A4EE42D42D496B95991 /* libPods-JSMessagesViewController.a in Frameworks */,
 				EC57CD69434E4F56A89D3B5F /* libPods-JSQSystemSoundPlayer.a in Frameworks */,
+				084A5F9419549FA4008EB2CA /* libz.1.1.3.dylib in Frameworks */,
 				597696B82BAE42588FC30D0D /* libPods-Parse.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1183,6 +1186,7 @@
 		76419A31930C46F88392083D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				084A5F9319549FA4008EB2CA /* libz.1.1.3.dylib */,
 				A738F6B96A86415D8B193284 /* AudioToolbox.framework */,
 				26E28CE51E97414182420AD1 /* CFNetwork.framework */,
 				671BA48FF4574C26BA211CD3 /* CoreGraphics.framework */,
@@ -2168,6 +2172,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/matsletten/Desktop/Matched\\ Up/Pods",
+				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
@@ -2251,6 +2259,10 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/matsletten/Desktop/Matched\\ Up/Pods",
+				);
 				OTHER_CFLAGS = (
 					"-DNS_BLOCK_ASSERTIONS=1",
 					"$(inherited)",
