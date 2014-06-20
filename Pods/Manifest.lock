@@ -1,16 +1,22 @@
 PODS:
   - Bolts (1.1.0)
-  - Facebook-iOS-SDK (3.14.1):
+  - Facebook-iOS-SDK (3.15.0):
     - Bolts
+  - JSMessagesViewController (3.4.0):
+    - JSQSystemSoundPlayer
+  - JSQSystemSoundPlayer (1.5.2)
   - Parse (1.2.19):
     - Facebook-iOS-SDK (~> 3.11)
 
 DEPENDENCIES:
+  - JSMessagesViewController (= 3.4.0)
   - Parse
 
 SPEC CHECKSUMS:
   Bolts: 91c2af8eae1d44e1dd75946a5b0ae04a43ea43e4
-  Facebook-iOS-SDK: e9b3d5ac54ee3e5e693f4eef470b97911b3d076d
+  Facebook-iOS-SDK: d67a9aa373f28b581e00cefdfd5a1ab8f883ac14
+  JSMessagesViewController: 74949aa08e44e987eaebf91ff0ed7e02ca3bbfee
+  JSQSystemSoundPlayer: c24914bc96ff5365b5d28b59d7ecffd60d1c5587
   Parse: ffebaecaddd32cb52671010f81567c298ff93d04
 
 COCOAPODS: 0.33.1
