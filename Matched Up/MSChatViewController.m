@@ -83,7 +83,7 @@
     {
         PFObject *chat = [PFObject objectWithClassName:@"Chat"];
         [chat setObject:self.chatRoom forKey:@"chatroom"];
-        [chat setObject:[PFUser currentUser] forKey:@"fromUser"];
+        [chat setObject:self.currentUser forKey:@"fromUser"];
         [chat setObject:self.withUser forKey:@"toUser"];
         [chat setObject:text forKey:@"text"];
         [chat saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
@@ -95,6 +95,21 @@
             [self finishSend];
             [self scrollToBottomAnimated:YES];
         }];
+    }
+}
+
+- (JSBubbleMessageType)messageTypeForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFObject *chat = self.chats[indexPath.row];
+    PFUser *currentUser = [PFUser currentUser];
+    PFUser *testFromUser = chat[@"fromUser"];
+    if ([testFromUser.objectId isEqual:currentUser.objectId])
+    {
+        return JSBubbleMessageTypeOutgoing;
+    }
+    else
+    {
+        return JSBubbleMessageTypeIncoming;
     }
 }
 
