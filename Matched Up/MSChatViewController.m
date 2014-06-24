@@ -60,12 +60,22 @@
     }
     self.title = self.withUser[@"profile"][@"firstName"];
     self.initialLoadComplete = NO;
+    
+    [self checkForNewChats];
+    
+    self.chatsTimer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(checkForNewChats) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+//We only want to check every 15 seconds when the user is on this view. When they leave this view, we need to stop the timer.
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self.chatsTimer invalidate];
+    self.chatsTimer = nil;
 }
 
 #pragma mark - TableView DataSource
@@ -75,7 +85,7 @@
     return [self.chats count];
 }
 
-#pragma mark - TableView Delegate
+#pragma mark - TableView Delegate Required
 
 - (void)didSendText:(NSString *)text
 {
@@ -101,9 +111,8 @@
 - (JSBubbleMessageType)messageTypeForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PFObject *chat = self.chats[indexPath.row];
-    PFUser *currentUser = [PFUser currentUser];
     PFUser *testFromUser = chat[@"fromUser"];
-    if ([testFromUser.objectId isEqual:currentUser.objectId])
+    if ([testFromUser.objectId isEqual:self.currentUser.objectId])
     {
         return JSBubbleMessageTypeOutgoing;
     }
@@ -113,11 +122,109 @@
     }
 }
 
+- (UIImageView *)bubbleImageViewWithType:(JSBubbleMessageType)type forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFObject *chat = self.chats[indexPath.row];
+    PFUser *testFromUser = chat[@"fromUser"];
+    if ([testFromUser.objectId isEqual:self.currentUser.objectId])
+    {
+        return [JSBubbleImageViewFactory bubbleImageViewForType:type color:[UIColor js_bubbleGreenColor]];
+    }
+    else
+    {
+        return [JSBubbleImageViewFactory bubbleImageViewForType:type color:[UIColor js_bubbleLightGrayColor]];
+    }
+}
 
+//JSMessageViewController has more delegate methods to implement that allow you to customize things like timestamps, style, etc. You can play with some of these in the extra credit. Let's add them now with some basic return values.
 
+- (JSMessagesViewTimestampPolicy)timestampPolicy
+{
+    return JSMessagesViewTimestampPolicyAll;
+}
 
+- (JSMessagesViewAvatarPolicy)avatarPolicy
+{
+    return JSMessagesViewAvatarPolicyNone;
+}
 
+- (JSMessagesViewSubtitlePolicy)subtitlePolicy
+{
+    return JSMessagesViewSubtitlePolicyNone;
+}
 
+- (JSMessageInputViewStyle)inputViewStyle
+{
+    return JSMessageInputViewStyleFlat;
+}
+
+#pragma mark - Messages View Delegate Optional
+//We've now implemented all required delegate methods. However, there are also optional delegate methods that we can implement. configureCell: allows us to customize what the cells look like. We'll customize our cells to have differing text colors depending on whether the message is incoming or outgoing.
+
+- (void)configureCell:(JSBubbleMessageCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell messageType] == JSBubbleMessageTypeOutgoing)
+    {
+        cell.bubbleView.textView.textColor = [UIColor whiteColor];
+    }
+}
+
+- (BOOL)shouldPreventScrollToBottomWhileUserScrolling
+{
+    return YES;
+}
+
+#pragma mark - Messages view data source: Required
+//we need to determine what should be displayed in each cell. We simply set the text for each row to the chat text in the corresponding array index.
+
+- (NSString *)textForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFObject *chat = self.chats[indexPath.row];
+    NSString *message = chat[@"text"];
+    return message;
+}
+
+- (NSDate *)timestampForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+- (UIImageView *)avatarImageViewForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+- (NSString *)subtitleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+#pragma mark - Helper methods
+//Implement a helper method to check for new chats. If there are new chats then we download them. Otherwise we do nothing at all.
+- (void) checkForNewChats
+{
+    int oldChatCount = [self.chats count];
+    PFQuery *queryForChats = [PFQuery queryWithClassName:@"Chat"];
+    [queryForChats whereKey:@"chatroom" equalTo:self.chatRoom];
+    [queryForChats orderByAscending:@"createdAt"];
+    [queryForChats findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    {
+        if (!error)
+        {
+            if (self.initialLoadComplete == NO || oldChatCount != [objects count])
+            {
+                self.chats = [objects mutableCopy];
+                [self.tableView reloadData];
+                if (self.initialLoadComplete == YES)
+                {
+                    [JSMessageSoundEffect playMessageReceivedSound];
+                }
+                self.initialLoadComplete = YES;
+                [self scrollToBottomAnimated:YES];
+            }
+        }
+    }];
+}
 
 
 

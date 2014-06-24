@@ -410,11 +410,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="IKC-HS-huK" detailTextLabel="6sg-Y0-axo" style="IBUITableViewCellStyleSubtitle" id="bu9-fy-knv">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="IKC-HS-huK" detailTextLabel="6sg-Y0-axo" style="IBUITableViewCellStyleSubtitle" id="bu9-fy-knv">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bu9-fy-knv" id="uJF-lR-Kta">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IKC-HS-huK">
@@ -442,7 +442,7 @@
                     <navigationItem key="navigationItem" id="ZIk-z7-exM"/>
                     <connections>
                         <outlet property="matchesTableView" destination="aFD-br-b8f" id="asF-6Q-cgH"/>
-                        <segue destination="A9A-2X-QhF" kind="push" identifier="matchesToChatSegue" id="WAe-bO-bHB"/>
+                        <segue destination="A9A-2X-QhF" kind="push" identifier="matchesToChatSegue" id="OFL-oW-cbX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rN7-Dt-Wba" userLabel="First Responder" sceneMemberID="firstResponder"/>

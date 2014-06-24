@@ -93,6 +93,7 @@
 //call helper methods in button actions to evaluate as needed
 - (IBAction)chatBarButtonPressed:(UIBarButtonItem *)sender
 {
+    
 }
 - (IBAction)settingsButtonPressed:(UIBarButtonItem *)sender
 {

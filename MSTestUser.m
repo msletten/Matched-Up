@@ -21,7 +21,7 @@
         if(!error)
         {
         //NSLog(@"sign up %@", error);
-        NSDictionary *profile = @{@"age" : @28, @"birthday" : @"11/22/1983", @"firstName" : @"Otto", @"gender" : @"male", @"location" : @"Stockholm, Sweden", @"name" : @"Otto Hjalmarsson"};
+        NSDictionary *profile = @{@"age" : @28, @"birthday" : @"11/22/1983", @"firstName" : @"Otto", @"gender" : @"female", @"location" : @"Stockholm, Sweden", @"name" : @"Otto Hjalmarsson"};
         [newUser setObject:profile forKey:@"profile"];
         [newUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
         {
