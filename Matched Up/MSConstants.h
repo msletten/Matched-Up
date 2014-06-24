@@ -14,7 +14,6 @@
 #pragma mark - User Class
 
 extern NSString *const kMSUserTagLineKey;
-
 extern NSString *const kMSUserProfileKey;
 extern NSString *const kMSUserProfileNameKey;
 extern NSString *const kMSUserProfileFirstNameKey;
@@ -49,5 +48,19 @@ extern NSString *const kMSWomenEnabledKey;
 extern NSString *const kMSSingleEnabledKey;
 extern NSString *const kMSAgeMaxKey;
 
+
+#pragma mark - ChatRoom
+
+extern NSString *const kMSChatRoomClassKey;
+extern NSString *const kMSChatRoomUser1Key;
+extern NSString *const kMSChatRoomUser2Key;
+
+#pragma mark - Chat
+
+extern NSString *const kMSChatClassKey;
+extern NSString *const kMSChatChatroomKey;
+extern NSString *const kMSChatFromUserKey;
+extern NSString *const kMSChatToUserKey;
+extern NSString *const kMSChatTextKey;
 
 @end

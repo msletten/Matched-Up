@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MSMatchesViewController : UIViewController
+@interface MSMatchesViewController : UIViewController 
 
 @end

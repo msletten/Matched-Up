@@ -17,19 +17,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="67D-ip-3ci">
-                                <rect key="frame" x="150" y="105" width="20" height="20"/>
+                                <rect key="frame" x="150" y="354" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AC9-sL-dIb">
-                                <rect key="frame" x="89" y="479" width="143" height="30"/>
+                                <rect key="frame" x="60" y="493" width="200" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login with Facebook">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Login with Facebook" backgroundImage="Facebook.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="alj-Ze-8gr" eventType="touchUpInside" id="QBI-74-7yz"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ht0-bO-eqz">
+                                <rect key="frame" x="93" y="171" width="134" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -43,7 +49,7 @@
             </objects>
             <point key="canvasLocation" x="272" y="180"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home View Controller - Matched Up-->
         <scene sceneID="8WK-Tb-Lv1">
             <objects>
                 <viewController id="D19-8P-Vku" customClass="MSHomeViewController" sceneMemberID="viewController">
@@ -55,72 +61,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAV-Rw-rXR">
-                                <rect key="frame" x="20" y="79" width="280" height="280"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWY-gA-ur7">
-                                <rect key="frame" x="20" y="525" width="80" height="30"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Izi-kH-1PW">
+                                <rect key="frame" x="20" y="69" width="280" height="380"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.91764712329999998" green="0.73725491759999995" blue="0.043137256059999997" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Like">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="likeButtonPressed:" destination="D19-8P-Vku" eventType="touchUpInside" id="8H2-mG-jc1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uu9-m8-Yqs">
-                                <rect key="frame" x="220" y="525" width="80" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="firstName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VA4-0Q-PIT">
+                                        <rect key="frame" x="6" y="339" width="173" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1U-8N-6qE">
+                                        <rect key="frame" x="235" y="339" width="52" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="BAV-Rw-rXR">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uP7-b3-rw6">
+                                <rect key="frame" x="20" y="459" width="280" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.91764712329999998" green="0.73725491759999995" blue="0.043137256059999997" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Dislike">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dislikeButtonPressed:" destination="D19-8P-Vku" eventType="touchUpInside" id="hht-Us-7Xb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f35-xf-dy1">
-                                <rect key="frame" x="120" y="525" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.91764712329999998" green="0.73725491759999995" blue="0.043137256059999997" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Info">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="infoButtonPressed:" destination="D19-8P-Vku" eventType="touchUpInside" id="gMe-tv-hZw"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="firstName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VA4-0Q-PIT">
-                                <rect key="frame" x="20" y="367" width="173" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1U-8N-6qE">
-                                <rect key="frame" x="248" y="367" width="52" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="tagLine" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Jdr-SS-Nay">
-                                <rect key="frame" x="20" y="409" width="280" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWY-gA-ur7">
+                                        <rect key="frame" x="13" y="23" width="55" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="LikeIcon.png">
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="likeButtonPressed:" destination="D19-8P-Vku" eventType="touchUpInside" id="8H2-mG-jc1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f35-xf-dy1">
+                                        <rect key="frame" x="121" y="23" width="39" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="InfoIcon.png">
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="infoButtonPressed:" destination="D19-8P-Vku" eventType="touchUpInside" id="gMe-tv-hZw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uu9-m8-Yqs">
+                                        <rect key="frame" x="232" y="23" width="38" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="DislikeIcon.png">
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dislikeButtonPressed:" destination="D19-8P-Vku" eventType="touchUpInside" id="hht-Us-7Xb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="c7y-J9-e9m">
-                        <barButtonItem key="leftBarButtonItem" title="Chat" id="xGV-7c-gVG">
+                    <navigationItem key="navigationItem" title="Matched Up" id="c7y-J9-e9m">
+                        <barButtonItem key="leftBarButtonItem" image="ChatIcon.png" id="xGV-7c-gVG">
                             <connections>
                                 <action selector="chatBarButtonPressed:" destination="D19-8P-Vku" id="sC9-Q7-dVM"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="168-Rm-OUb">
+                        <barButtonItem key="rightBarButtonItem" image="SettingIcon.png" id="168-Rm-OUb">
                             <connections>
                                 <action selector="settingsButtonPressed:" destination="D19-8P-Vku" id="iA9-7P-dYv"/>
                                 <segue destination="KE5-wh-joN" kind="push" id="THh-yM-nuK"/>
@@ -129,14 +143,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ageLabel" destination="M1U-8N-6qE" id="J04-80-xbg"/>
+                        <outlet property="buttonContainerView" destination="uP7-b3-rw6" id="q7v-Xl-tCz"/>
                         <outlet property="chatBarButtonItem" destination="xGV-7c-gVG" id="jnu-lX-qUE"/>
                         <outlet property="dislikeButton" destination="Uu9-m8-Yqs" id="JCe-1h-cYZ"/>
                         <outlet property="firstNameLabel" destination="VA4-0Q-PIT" id="QRC-I1-nXG"/>
                         <outlet property="infoButton" destination="f35-xf-dy1" id="rNA-cY-swx"/>
+                        <outlet property="labelContainerView" destination="Izi-kH-1PW" id="LsC-HB-HTS"/>
                         <outlet property="likeButton" destination="iWY-gA-ur7" id="1da-JQ-kIU"/>
                         <outlet property="photoImageView" destination="BAV-Rw-rXR" id="rSh-du-3AG"/>
                         <outlet property="settingsBarButtonItem" destination="168-Rm-OUb" id="iNU-o5-tv8"/>
-                        <outlet property="tagLineLabel" destination="Jdr-SS-Nay" id="hKU-lm-qXj"/>
                         <segue destination="ul5-uc-0ku" kind="push" identifier="homeToProfileSegue" id="7Tb-UX-1wk"/>
                         <segue destination="gO6-62-06R" kind="modal" identifier="homeToMatchSegue" id="OC2-jp-aYl"/>
                         <segue destination="jiM-c3-zcp" kind="push" identifier="homeToMatchesSegue" id="nvx-gT-5E7"/>
@@ -442,7 +457,7 @@
                     <navigationItem key="navigationItem" id="ZIk-z7-exM"/>
                     <connections>
                         <outlet property="matchesTableView" destination="aFD-br-b8f" id="asF-6Q-cgH"/>
-                        <segue destination="A9A-2X-QhF" kind="push" identifier="matchesToChatSegue" id="OFL-oW-cbX"/>
+                        <segue destination="A9A-2X-QhF" kind="push" identifier="matchesToChatSegue" id="Mly-mj-q8L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rN7-Dt-Wba" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -536,6 +551,16 @@
             <point key="canvasLocation" x="-132" y="180"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ChatIcon.png" width="22" height="22"/>
+        <image name="DislikeIcon.png" width="38" height="37"/>
+        <image name="Facebook.png" width="200" height="25"/>
+        <image name="InfoIcon.png" width="39" height="37"/>
+        <image name="LikeIcon.png" width="55" height="37"/>
+        <image name="Logo.png" width="134" height="94"/>
+        <image name="SettingIcon.png" width="22" height="20"/>
+        <image name="UserImage.png" width="320" height="221"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

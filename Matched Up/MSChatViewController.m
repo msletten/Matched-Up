@@ -49,16 +49,16 @@
     self.messageInputView.textView.placeHolder = @"New Message";
     [self setBackgroundColor:[UIColor colorWithRed:218/255.0f green:165/255.0f blue:32/255.0f alpha:1/1.0f]];
     self.currentUser = [PFUser currentUser];
-    PFUser *testUser1 = self.chatRoom[@"user1"];
+    PFUser *testUser1 = self.chatRoom[kMSChatRoomUser1Key];
     if ([testUser1.objectId isEqual:self.currentUser.objectId])
     {
-        self.withUser = self.chatRoom[@"user2"];
+        self.withUser = self.chatRoom[kMSChatRoomUser2Key];
     }
     else
     {
-        self.withUser = self.chatRoom[@"user1"];
+        self.withUser = self.chatRoom[kMSChatRoomUser1Key];
     }
-    self.title = self.withUser[@"profile"][@"firstName"];
+    self.title = self.withUser[kMSUserProfileKey][kMSUserProfileFirstNameKey];
     self.initialLoadComplete = NO;
     
     [self checkForNewChats];
@@ -91,14 +91,14 @@
 {
     if (text.length != 0)
     {
-        PFObject *chat = [PFObject objectWithClassName:@"Chat"];
-        [chat setObject:self.chatRoom forKey:@"chatroom"];
-        [chat setObject:self.currentUser forKey:@"fromUser"];
-        [chat setObject:self.withUser forKey:@"toUser"];
-        [chat setObject:text forKey:@"text"];
+        PFObject *chat = [PFObject objectWithClassName:kMSChatClassKey];
+        [chat setObject:self.chatRoom forKey:kMSChatChatroomKey];
+        [chat setObject:self.currentUser forKey:kMSChatFromUserKey];
+        [chat setObject:self.withUser forKey:kMSChatToUserKey];
+        [chat setObject:text forKey:kMSChatTextKey];
         [chat saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
         {
-            NSLog(@"save complete");
+            //NSLog(@"save complete");
             [self.chats addObject:chat];
             [JSMessageSoundEffect playMessageSentSound];
             [self.tableView reloadData];
@@ -111,7 +111,7 @@
 - (JSBubbleMessageType)messageTypeForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PFObject *chat = self.chats[indexPath.row];
-    PFUser *testFromUser = chat[@"fromUser"];
+    PFUser *testFromUser = chat[kMSChatFromUserKey];
     if ([testFromUser.objectId isEqual:self.currentUser.objectId])
     {
         return JSBubbleMessageTypeOutgoing;
@@ -125,7 +125,7 @@
 - (UIImageView *)bubbleImageViewWithType:(JSBubbleMessageType)type forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PFObject *chat = self.chats[indexPath.row];
-    PFUser *testFromUser = chat[@"fromUser"];
+    PFUser *testFromUser = chat[kMSChatFromUserKey];
     if ([testFromUser.objectId isEqual:self.currentUser.objectId])
     {
         return [JSBubbleImageViewFactory bubbleImageViewForType:type color:[UIColor js_bubbleGreenColor]];
@@ -180,7 +180,7 @@
 - (NSString *)textForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PFObject *chat = self.chats[indexPath.row];
-    NSString *message = chat[@"text"];
+    NSString *message = chat[kMSChatTextKey];
     return message;
 }
 
@@ -204,8 +204,8 @@
 - (void) checkForNewChats
 {
     int oldChatCount = [self.chats count];
-    PFQuery *queryForChats = [PFQuery queryWithClassName:@"Chat"];
-    [queryForChats whereKey:@"chatroom" equalTo:self.chatRoom];
+    PFQuery *queryForChats = [PFQuery queryWithClassName:kMSChatClassKey];
+    [queryForChats whereKey:kMSChatChatroomKey equalTo:self.chatRoom];
     [queryForChats orderByAscending:@"createdAt"];
     [queryForChats findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     {

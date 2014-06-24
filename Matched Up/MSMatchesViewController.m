@@ -59,6 +59,7 @@
     MSChatViewController *chatVC = segue.destinationViewController;
     NSIndexPath *indexPath = sender;
     chatVC.chatRoom = [self.availableChatRooms objectAtIndex:indexPath.row];
+    //NSLog(@"segue triggered");
 }
 
 #pragma mark - Helper Methods
@@ -109,7 +110,7 @@
         likedUser = [chatroom objectForKey:@"user1"];
     }
     cell.textLabel.text = likedUser[@"profile"][@"firstName"];
-    //cell.imageView.image = placeholder image
+    cell.detailTextLabel.text = chatroom[@"createdAt"];
     
     //cell.imageView.image = [UIImage imageNamed:@"avatar-placeholder.png"];
     cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -133,24 +134,10 @@
 
 #pragma mark - UITableViewDelegate
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //NSLog(@"row selected");
     [self performSegueWithIdentifier:@"matchesToChatSegue" sender:indexPath];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end

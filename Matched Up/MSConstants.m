@@ -48,4 +48,18 @@ NSString *const kMSWomenEnabledKey = @"women";
 NSString *const kMSSingleEnabledKey = @"single";
 NSString *const kMSAgeMaxKey = @"ageMax";
 
+#pragma mark - ChatRoom
+
+NSString *const kMSChatRoomClassKey = @"ChatRoom";
+NSString *const kMSChatRoomUser1Key = @"user1";
+NSString *const kMSChatRoomUser2Key = @"user2";
+
+#pragma mark - Chat
+
+NSString *const kMSChatClassKey = @"Chat";
+NSString *const kMSChatChatroomKey = @"chatroom";
+NSString *const kMSChatFromUserKey = @"fromUser";
+NSString *const kMSChatToUserKey = @"toUser";
+NSString *const kMSChatTextKey = @"text";
+
 @end

@@ -18,10 +18,12 @@
 @property (strong, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (strong, nonatomic) IBOutlet UILabel *firstNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *ageLabel;
-@property (strong, nonatomic) IBOutlet UILabel *tagLineLabel;
 @property (strong, nonatomic) IBOutlet UIButton *likeButton;
 @property (strong, nonatomic) IBOutlet UIButton *infoButton;
 @property (strong, nonatomic) IBOutlet UIButton *dislikeButton;
+@property (strong, nonatomic) IBOutlet UIView *labelContainerView;
+@property (strong, nonatomic) IBOutlet UIView *buttonContainerView;
+
 //The HomeViewController is is where users will see images of other users that they can like and dislike. We'll need an array to hold the photos, and an integer to track the current photo that is showing.
 @property (strong, nonatomic) NSArray *photoArray;
 @property (strong, nonatomic) PFObject *userPhoto;
@@ -50,8 +52,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [MSTestUser saveTestUserToParse];
+    //[MSTestUser saveTestUserToParse];
     
+    [self setupViews];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.photoImageView.image = nil;
+    self.firstNameLabel.text = nil;
+    self.ageLabel.text = nil;
     self.likeButton.enabled = NO;
     self.dislikeButton.enabled = NO;
     self.infoButton.enabled = NO;
@@ -59,13 +69,45 @@
     self.currentPhotoIndex = 0;
     
     PFQuery *query = [PFQuery queryWithClassName:kMSPhotoClassKey];
-    [query whereKey:@"user" notEqualTo:[PFUser currentUser]];
+    [query whereKey:kMSPhotoUserKey notEqualTo:[PFUser currentUser]];
     [query includeKey:kMSPhotoUserKey];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     {
-        self.photoArray = objects;
-        [self queryForCurrentPhotoIndex];
+        if (!error)
+        {
+            self.photoArray = objects;
+            if ([self allowPhoto] == NO)
+            {
+                [self setupNextPhoto];
+            }
+            else
+            {
+                [self queryForCurrentPhotoIndex];
+            }
+        }
+        else
+        {
+            NSLog(@"%@", error);
+        }
     }];
+}
+
+- (void)setupViews
+{
+    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1/1.0];
+    [self addShadowForView:self.buttonContainerView];
+    [self addShadowForView:self.labelContainerView];
+    self.photoImageView.layer.masksToBounds = YES;
+    //[self addShadowForView:self.photoImageView];
+}
+
+- (void)addShadowForView:(UIView *)view
+{
+    view.layer.masksToBounds = NO;
+    view.layer.cornerRadius = 4;
+    view.layer.shadowOffset = CGSizeMake(0, 1);
+    view.layer.shadowRadius = 1;
+    view.layer.shadowOpacity = 0.25;
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,7 +135,7 @@
 //call helper methods in button actions to evaluate as needed
 - (IBAction)chatBarButtonPressed:(UIBarButtonItem *)sender
 {
-    
+    [self performSegueWithIdentifier:@"homeToMatchesSegue" sender:nil];
 }
 - (IBAction)settingsButtonPressed:(UIBarButtonItem *)sender
 {
@@ -181,7 +223,6 @@
 {
     self.firstNameLabel.text = self.userPhoto[kMSPhotoUserKey][kMSUserProfileKey][kMSUserProfileFirstNameKey];
     self.ageLabel.text = [NSString stringWithFormat:@"%@", self.userPhoto[kMSPhotoUserKey][kMSUserProfileKey][kMSUserProfileAgeKey]];
-    self.tagLineLabel.text = self.userPhoto[kMSPhotoUserKey][kMSUserTagLineKey];
 }
 
 //Our user presses the like or dislike button and moves to the next photo. We need a method to handle that work of tracking the photo index and calling the query.
@@ -190,12 +231,53 @@
     if (self.currentPhotoIndex + 1 < self.photoArray.count)
     {
         self.currentPhotoIndex ++;
-        [self queryForCurrentPhotoIndex];
+        if ([self allowPhoto] == NO)
+        {
+            [self setupNextPhoto];
+        }
+        else
+        {
+            [self queryForCurrentPhotoIndex];
+        }
     }
     else
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No More Users to View" message:@"Check Back Later for more People!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
+    }
+}
+
+//We need to restrict photos from users who do not meet the requirements. Create a helper method that returns YES if the photo is allowed, or NO if it is not.
+- (BOOL)allowPhoto
+{
+    int maxAge = [[NSUserDefaults standardUserDefaults] integerForKey:kMSAgeMaxKey];
+    BOOL men = [[NSUserDefaults standardUserDefaults] boolForKey:kMSMenEnabledKey];
+    BOOL women = [[NSUserDefaults standardUserDefaults] boolForKey:kMSWomenEnabledKey];
+    BOOL single = [[NSUserDefaults standardUserDefaults] boolForKey:kMSSingleEnabledKey];
+    PFObject *photo = self.photoArray[self.currentPhotoIndex];
+    PFUser *user = photo[kMSPhotoUserKey];
+    int userAge = [user[kMSUserProfileKey][kMSUserProfileAgeKey] intValue];
+    NSString *gender = user[kMSUserProfileKey][kMSUserProfileGenderKey];
+    NSString *relationshipStatus = user[kMSUserProfileKey][kMSUserProfileRelationshipStatusKey];
+    if (userAge > maxAge)
+    {
+        return NO;
+    }
+    else if (men == NO && [gender isEqualToString:@"male"])
+    {
+        return NO;
+    }
+    else if (women == NO && [gender isEqualToString:@"female"])
+    {
+        return NO;
+    }
+    else if (single == NO && ([relationshipStatus isEqualToString:@"single"] || relationshipStatus == nil))
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
     }
 }
 
@@ -295,22 +377,22 @@
 - (void)createChatRoom
 {
     //NSLog(@"create called");
-    PFQuery *queryForChatRoom = [PFQuery queryWithClassName:@"ChatRoom"];
-    [queryForChatRoom whereKey:@"user1" equalTo:[PFUser currentUser]];
-    [queryForChatRoom whereKey:@"user2" equalTo:self.userPhoto[kMSPhotoUserKey]];
+    PFQuery *queryForChatRoom = [PFQuery queryWithClassName:kMSChatRoomClassKey];
+    [queryForChatRoom whereKey:kMSChatRoomUser1Key equalTo:[PFUser currentUser]];
+    [queryForChatRoom whereKey:kMSChatRoomUser2Key equalTo:self.userPhoto[kMSPhotoUserKey]];
     
-    PFQuery *queryForChatRoomInverse = [PFQuery queryWithClassName:@"ChatRoom"];
-    [queryForChatRoomInverse whereKey:@"user1" equalTo:self.userPhoto[kMSPhotoUserKey]];
-    [queryForChatRoomInverse whereKey:@"user2" equalTo:[PFUser currentUser]];
+    PFQuery *queryForChatRoomInverse = [PFQuery queryWithClassName:kMSChatRoomClassKey];
+    [queryForChatRoomInverse whereKey:kMSChatRoomUser1Key equalTo:self.userPhoto[kMSPhotoUserKey]];
+    [queryForChatRoomInverse whereKey:kMSChatRoomUser2Key equalTo:[PFUser currentUser]];
     
     PFQuery *combinedQuery = [PFQuery orQueryWithSubqueries:@[queryForChatRoom, queryForChatRoomInverse]];
     [combinedQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     {
         if ([objects count] == 0)
         {
-            PFObject *chatroom = [PFObject objectWithClassName:@"ChatRoom"];
-            [chatroom setObject:[PFUser currentUser] forKey:@"user1"];
-            [chatroom setObject:self.userPhoto[kMSPhotoUserKey] forKey:@"user2"];
+            PFObject *chatroom = [PFObject objectWithClassName:kMSChatRoomClassKey];
+            [chatroom setObject:[PFUser currentUser] forKey:kMSChatRoomUser1Key];
+            [chatroom setObject:self.userPhoto[kMSPhotoUserKey] forKey:kMSChatRoomUser2Key];
             [chatroom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
             {
                 [self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
