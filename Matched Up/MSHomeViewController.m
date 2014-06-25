@@ -10,8 +10,9 @@
 #import "MSTestUser.h"
 #import "MSProfileViewController.h"
 #import "MSMatchViewController.h"
+#import "MSTransitionAnimator.h"
 
-@interface MSHomeViewController () <MSMatchViewControllerDelegate, MSProfileViewControllerDelegate>
+@interface MSHomeViewController () <MSMatchViewControllerDelegate, MSProfileViewControllerDelegate, UIViewControllerTransitioningDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
@@ -123,12 +124,6 @@
         MSProfileViewController *profileVC = segue.destinationViewController;
         profileVC.profilePhoto = self.userPhoto;
         profileVC.delegate = self;
-    }
-    else if ([segue.identifier isEqualToString:@"homeToMatchSegue"])
-    {
-        MSMatchViewController *matchVC = segue.destinationViewController;
-        matchVC.matchedUserImage = self.photoImageView.image;
-        matchVC.matchVCDelegate = self;
     }
 }
 
@@ -396,7 +391,14 @@
             [chatroom setObject:self.userPhoto[kMSPhotoUserKey] forKey:kMSChatRoomUser2Key];
             [chatroom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
             {
-                [self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
+                UIStoryboard *myStoryboard = self.storyboard;
+                MSMatchViewController *matchVC = [myStoryboard instantiateViewControllerWithIdentifier:@"matchVC"];
+                matchVC.view.backgroundColor = [UIColor colorWithRed:0/255.0f green:0/255.0f blue:0/255.0f alpha:0.75f];
+                matchVC.transitioningDelegate = self;
+                matchVC.matchedUserImage = self.photoImageView.image;
+                matchVC.matchVCDelegate = self;
+                matchVC.modalPresentationStyle = UIModalPresentationCustom;
+                [self presentViewController:matchVC animated:YES completion:nil];
             }];
         }
     }];
@@ -424,6 +426,21 @@
 {
     [self.navigationController popViewControllerAnimated:NO];
     [self checkDislike];
+}
+
+#pragma mark - UIViewControllerTrasitioningDelegate
+//Implement the UIViewControllerTransitioningDelegate methods animationControllerForPresentedController and animationControllerForDismissedController to use the Transition Animator class that we setup in our last section. This will allow our custom transition to use the Transition Animator.
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    MSTransitionAnimator *animator = [[MSTransitionAnimator alloc] init];
+    animator.presenting = YES;
+    return animator;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    MSTransitionAnimator *animator = [[MSTransitionAnimator alloc] init];
+    return animator;
 }
 
 @end

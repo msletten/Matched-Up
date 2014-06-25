@@ -158,6 +158,7 @@
 		08A51AD9195A2C9E0073CBA7 /* BG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A51AD5195A2C9E0073CBA7 /* BG@2x.png */; };
 		08A51ADA195A2C9E0073CBA7 /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A51AD6195A2C9E0073CBA7 /* BG.png */; };
 		08A51ADB195A2C9E0073CBA7 /* BG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A51AD7195A2C9E0073CBA7 /* BG@2x.png */; };
+		08A51ADF195B51880073CBA7 /* MSTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51ADE195B51880073CBA7 /* MSTransitionAnimator.m */; };
 		08CAFC2F1946599600B83B52 /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC2E1946599600B83B52 /* MSHomeViewController.m */; };
 		08CAFC33194661C300B83B52 /* MSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC32194661C300B83B52 /* MSSettingsViewController.m */; };
 		08CAFC371946649000B83B52 /* MSEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC361946649000B83B52 /* MSEditProfileViewController.m */; };
@@ -347,6 +348,8 @@
 		08A51AD5195A2C9E0073CBA7 /* BG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG@2x.png"; sourceTree = "<group>"; };
 		08A51AD6195A2C9E0073CBA7 /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
 		08A51AD7195A2C9E0073CBA7 /* BG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG@2x.png"; sourceTree = "<group>"; };
+		08A51ADD195B51880073CBA7 /* MSTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTransitionAnimator.h; sourceTree = "<group>"; };
+		08A51ADE195B51880073CBA7 /* MSTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTransitionAnimator.m; sourceTree = "<group>"; };
 		08CAFC2D1946599600B83B52 /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
 		08CAFC2E1946599600B83B52 /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
 		08CAFC31194661C300B83B52 /* MSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSettingsViewController.h; sourceTree = "<group>"; };
@@ -420,6 +423,7 @@
 		084A5F07195350C7008EB2CA /* Match */ = {
 			isa = PBXGroup;
 			children = (
+				08A51ADC195B51280073CBA7 /* Transition Helper */,
 				084A5F04195350BE008EB2CA /* MSMatchViewController.h */,
 				084A5F05195350BE008EB2CA /* MSMatchViewController.m */,
 			);
@@ -707,6 +711,15 @@
 				08A51AD5195A2C9E0073CBA7 /* BG@2x.png */,
 			);
 			path = 960;
+			sourceTree = "<group>";
+		};
+		08A51ADC195B51280073CBA7 /* Transition Helper */ = {
+			isa = PBXGroup;
+			children = (
+				08A51ADD195B51880073CBA7 /* MSTransitionAnimator.h */,
+				08A51ADE195B51880073CBA7 /* MSTransitionAnimator.m */,
+			);
+			name = "Transition Helper";
 			sourceTree = "<group>";
 		};
 		08CAFC301946599B00B83B52 /* Home */ = {
@@ -1133,6 +1146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A51ADF195B51880073CBA7 /* MSTransitionAnimator.m in Sources */,
 				08CAFC2F1946599600B83B52 /* MSHomeViewController.m in Sources */,
 				08CF2164193E5883009248A1 /* MSAppDelegate.m in Sources */,
 				084A5F06195350BE008EB2CA /* MSMatchViewController.m in Sources */,
