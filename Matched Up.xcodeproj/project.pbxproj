@@ -159,6 +159,23 @@
 		08A51ADA195A2C9E0073CBA7 /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A51AD6195A2C9E0073CBA7 /* BG.png */; };
 		08A51ADB195A2C9E0073CBA7 /* BG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A51AD7195A2C9E0073CBA7 /* BG@2x.png */; };
 		08A51ADF195B51880073CBA7 /* MSTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51ADE195B51880073CBA7 /* MSTransitionAnimator.m */; };
+		08A51AFE195B85C10073CBA7 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A51AE1195B85C10073CBA7 /* Media.xcassets */; };
+		08A51AFF195B85C10073CBA7 /* Mixpanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AE3195B85C10073CBA7 /* Mixpanel.m */; };
+		08A51B00195B85C10073CBA7 /* MPCloseBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A51AE4195B85C10073CBA7 /* MPCloseBtn.png */; };
+		08A51B01195B85C10073CBA7 /* MPCloseBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A51AE5195B85C10073CBA7 /* MPCloseBtn@2x.png */; };
+		08A51B02195B85C10073CBA7 /* MPNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AE7195B85C10073CBA7 /* MPNotification.m */; };
+		08A51B03195B85C10073CBA7 /* MPNotification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A51AE8195B85C10073CBA7 /* MPNotification.storyboard */; };
+		08A51B04195B85C10073CBA7 /* MPNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AEA195B85C10073CBA7 /* MPNotificationViewController.m */; };
+		08A51B05195B85C10073CBA7 /* MPSurvey.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AEC195B85C10073CBA7 /* MPSurvey.m */; };
+		08A51B06195B85C10073CBA7 /* MPSurvey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A51AED195B85C10073CBA7 /* MPSurvey.storyboard */; };
+		08A51B07195B85C10073CBA7 /* MPSurveyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AEF195B85C10073CBA7 /* MPSurveyNavigationController.m */; };
+		08A51B08195B85C10073CBA7 /* MPSurveyQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AF1195B85C10073CBA7 /* MPSurveyQuestion.m */; };
+		08A51B09195B85C10073CBA7 /* MPSurveyQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AF3195B85C10073CBA7 /* MPSurveyQuestionViewController.m */; };
+		08A51B0A195B85C10073CBA7 /* NSData+MPBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AF5195B85C10073CBA7 /* NSData+MPBase64.m */; };
+		08A51B0B195B85C10073CBA7 /* UIColor+MPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AF7195B85C10073CBA7 /* UIColor+MPColor.m */; };
+		08A51B0C195B85C10073CBA7 /* UIImage+MPAverageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AF9195B85C10073CBA7 /* UIImage+MPAverageColor.m */; };
+		08A51B0D195B85C10073CBA7 /* UIImage+MPImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AFB195B85C10073CBA7 /* UIImage+MPImageEffects.m */; };
+		08A51B0E195B85C10073CBA7 /* UIView+MPSnapshotImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A51AFD195B85C10073CBA7 /* UIView+MPSnapshotImage.m */; };
 		08CAFC2F1946599600B83B52 /* MSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC2E1946599600B83B52 /* MSHomeViewController.m */; };
 		08CAFC33194661C300B83B52 /* MSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC32194661C300B83B52 /* MSSettingsViewController.m */; };
 		08CAFC371946649000B83B52 /* MSEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CAFC361946649000B83B52 /* MSEditProfileViewController.m */; };
@@ -350,6 +367,35 @@
 		08A51AD7195A2C9E0073CBA7 /* BG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG@2x.png"; sourceTree = "<group>"; };
 		08A51ADD195B51880073CBA7 /* MSTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTransitionAnimator.h; sourceTree = "<group>"; };
 		08A51ADE195B51880073CBA7 /* MSTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTransitionAnimator.m; sourceTree = "<group>"; };
+		08A51AE1195B85C10073CBA7 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		08A51AE2195B85C10073CBA7 /* Mixpanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mixpanel.h; sourceTree = "<group>"; };
+		08A51AE3195B85C10073CBA7 /* Mixpanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mixpanel.m; sourceTree = "<group>"; };
+		08A51AE4195B85C10073CBA7 /* MPCloseBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MPCloseBtn.png; sourceTree = "<group>"; };
+		08A51AE5195B85C10073CBA7 /* MPCloseBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MPCloseBtn@2x.png"; sourceTree = "<group>"; };
+		08A51AE6195B85C10073CBA7 /* MPNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPNotification.h; sourceTree = "<group>"; };
+		08A51AE7195B85C10073CBA7 /* MPNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPNotification.m; sourceTree = "<group>"; };
+		08A51AE8195B85C10073CBA7 /* MPNotification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MPNotification.storyboard; sourceTree = "<group>"; };
+		08A51AE9195B85C10073CBA7 /* MPNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPNotificationViewController.h; sourceTree = "<group>"; };
+		08A51AEA195B85C10073CBA7 /* MPNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPNotificationViewController.m; sourceTree = "<group>"; };
+		08A51AEB195B85C10073CBA7 /* MPSurvey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurvey.h; sourceTree = "<group>"; };
+		08A51AEC195B85C10073CBA7 /* MPSurvey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurvey.m; sourceTree = "<group>"; };
+		08A51AED195B85C10073CBA7 /* MPSurvey.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MPSurvey.storyboard; sourceTree = "<group>"; };
+		08A51AEE195B85C10073CBA7 /* MPSurveyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurveyNavigationController.h; sourceTree = "<group>"; };
+		08A51AEF195B85C10073CBA7 /* MPSurveyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurveyNavigationController.m; sourceTree = "<group>"; };
+		08A51AF0195B85C10073CBA7 /* MPSurveyQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurveyQuestion.h; sourceTree = "<group>"; };
+		08A51AF1195B85C10073CBA7 /* MPSurveyQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurveyQuestion.m; sourceTree = "<group>"; };
+		08A51AF2195B85C10073CBA7 /* MPSurveyQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurveyQuestionViewController.h; sourceTree = "<group>"; };
+		08A51AF3195B85C10073CBA7 /* MPSurveyQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurveyQuestionViewController.m; sourceTree = "<group>"; };
+		08A51AF4195B85C10073CBA7 /* NSData+MPBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MPBase64.h"; sourceTree = "<group>"; };
+		08A51AF5195B85C10073CBA7 /* NSData+MPBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MPBase64.m"; sourceTree = "<group>"; };
+		08A51AF6195B85C10073CBA7 /* UIColor+MPColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MPColor.h"; sourceTree = "<group>"; };
+		08A51AF7195B85C10073CBA7 /* UIColor+MPColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MPColor.m"; sourceTree = "<group>"; };
+		08A51AF8195B85C10073CBA7 /* UIImage+MPAverageColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MPAverageColor.h"; sourceTree = "<group>"; };
+		08A51AF9195B85C10073CBA7 /* UIImage+MPAverageColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MPAverageColor.m"; sourceTree = "<group>"; };
+		08A51AFA195B85C10073CBA7 /* UIImage+MPImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MPImageEffects.h"; sourceTree = "<group>"; };
+		08A51AFB195B85C10073CBA7 /* UIImage+MPImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MPImageEffects.m"; sourceTree = "<group>"; };
+		08A51AFC195B85C10073CBA7 /* UIView+MPSnapshotImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MPSnapshotImage.h"; sourceTree = "<group>"; };
+		08A51AFD195B85C10073CBA7 /* UIView+MPSnapshotImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MPSnapshotImage.m"; sourceTree = "<group>"; };
 		08CAFC2D1946599600B83B52 /* MSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSHomeViewController.h; sourceTree = "<group>"; };
 		08CAFC2E1946599600B83B52 /* MSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSHomeViewController.m; sourceTree = "<group>"; };
 		08CAFC31194661C300B83B52 /* MSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSettingsViewController.h; sourceTree = "<group>"; };
@@ -722,6 +768,42 @@
 			name = "Transition Helper";
 			sourceTree = "<group>";
 		};
+		08A51AE0195B85C10073CBA7 /* Mixpanel */ = {
+			isa = PBXGroup;
+			children = (
+				08A51AE1195B85C10073CBA7 /* Media.xcassets */,
+				08A51AE2195B85C10073CBA7 /* Mixpanel.h */,
+				08A51AE3195B85C10073CBA7 /* Mixpanel.m */,
+				08A51AE4195B85C10073CBA7 /* MPCloseBtn.png */,
+				08A51AE5195B85C10073CBA7 /* MPCloseBtn@2x.png */,
+				08A51AE6195B85C10073CBA7 /* MPNotification.h */,
+				08A51AE7195B85C10073CBA7 /* MPNotification.m */,
+				08A51AE8195B85C10073CBA7 /* MPNotification.storyboard */,
+				08A51AE9195B85C10073CBA7 /* MPNotificationViewController.h */,
+				08A51AEA195B85C10073CBA7 /* MPNotificationViewController.m */,
+				08A51AEB195B85C10073CBA7 /* MPSurvey.h */,
+				08A51AEC195B85C10073CBA7 /* MPSurvey.m */,
+				08A51AED195B85C10073CBA7 /* MPSurvey.storyboard */,
+				08A51AEE195B85C10073CBA7 /* MPSurveyNavigationController.h */,
+				08A51AEF195B85C10073CBA7 /* MPSurveyNavigationController.m */,
+				08A51AF0195B85C10073CBA7 /* MPSurveyQuestion.h */,
+				08A51AF1195B85C10073CBA7 /* MPSurveyQuestion.m */,
+				08A51AF2195B85C10073CBA7 /* MPSurveyQuestionViewController.h */,
+				08A51AF3195B85C10073CBA7 /* MPSurveyQuestionViewController.m */,
+				08A51AF4195B85C10073CBA7 /* NSData+MPBase64.h */,
+				08A51AF5195B85C10073CBA7 /* NSData+MPBase64.m */,
+				08A51AF6195B85C10073CBA7 /* UIColor+MPColor.h */,
+				08A51AF7195B85C10073CBA7 /* UIColor+MPColor.m */,
+				08A51AF8195B85C10073CBA7 /* UIImage+MPAverageColor.h */,
+				08A51AF9195B85C10073CBA7 /* UIImage+MPAverageColor.m */,
+				08A51AFA195B85C10073CBA7 /* UIImage+MPImageEffects.h */,
+				08A51AFB195B85C10073CBA7 /* UIImage+MPImageEffects.m */,
+				08A51AFC195B85C10073CBA7 /* UIView+MPSnapshotImage.h */,
+				08A51AFD195B85C10073CBA7 /* UIView+MPSnapshotImage.m */,
+			);
+			path = Mixpanel;
+			sourceTree = "<group>";
+		};
 		08CAFC301946599B00B83B52 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,6 +907,7 @@
 		08CF215A193E5883009248A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				08A51AE0195B85C10073CBA7 /* Mixpanel */,
 				08A519A6195A28B00073CBA7 /* Matched_Up_assets 2 */,
 				08CAFCF8194A746B00B83B52 /* Haberdash.jpg */,
 				08EAEF49193FDDBB00805776 /* MSConstants.h */,
@@ -996,6 +1079,7 @@
 				08A51A4F195A28B00073CBA7 /* LikeIcon.png in Resources */,
 				08A51A78195A28B00073CBA7 /* back-icon@2x.png in Resources */,
 				08A51A88195A28B00073CBA7 /* form@2x.png in Resources */,
+				08A51B01195B85C10073CBA7 /* MPCloseBtn@2x.png in Resources */,
 				08A51A9D195A28B00073CBA7 /* Top_NavBG.png in Resources */,
 				08CF215E193E5883009248A1 /* InfoPlist.strings in Resources */,
 				08A51ADB195A2C9E0073CBA7 /* BG@2x.png in Resources */,
@@ -1031,6 +1115,7 @@
 				08A51ABB195A28B10073CBA7 /* Icon-Small-50@2x.png in Resources */,
 				08A51AB7195A28B00073CBA7 /* 1024_icon-1-01.png in Resources */,
 				08A51A5B195A28B00073CBA7 /* About_BG.png in Resources */,
+				08A51AFE195B85C10073CBA7 /* Media.xcassets in Resources */,
 				08A51A5D195A28B00073CBA7 /* AgeIcon.png in Resources */,
 				08A51AC1195A28B10073CBA7 /* iTunesArtwork@2x.png in Resources */,
 				08A51ABF195A28B10073CBA7 /* Icon@2x.png in Resources */,
@@ -1048,6 +1133,7 @@
 				08A51A9C195A28B00073CBA7 /* SettingIcon@2x.png in Resources */,
 				08A51A45195A28B00073CBA7 /* Logo.png in Resources */,
 				08A51A96195A28B00073CBA7 /* EditProfile@2x.png in Resources */,
+				08A51B06195B85C10073CBA7 /* MPSurvey.storyboard in Resources */,
 				08A51AC2195A28B10073CBA7 /* Icon-40.png in Resources */,
 				08A51AC4195A28B10073CBA7 /* Icon-60.png in Resources */,
 				08A51A85195A28B00073CBA7 /* BG.png in Resources */,
@@ -1068,6 +1154,8 @@
 				08A51A7C195A28B00073CBA7 /* Chat_user@2x.png in Resources */,
 				08A51AC5195A28B10073CBA7 /* Icon-60@2x.png in Resources */,
 				08A51A56195A28B00073CBA7 /* Top_NavBG@2x.png in Resources */,
+				08A51B00195B85C10073CBA7 /* MPCloseBtn.png in Resources */,
+				08A51B03195B85C10073CBA7 /* MPNotification.storyboard in Resources */,
 				08A51A51195A28B00073CBA7 /* Matched-Up.png in Resources */,
 				08A51AC6195A28B10073CBA7 /* Icon-72.png in Resources */,
 				08A51A79195A28B00073CBA7 /* BG.png in Resources */,
@@ -1149,16 +1237,28 @@
 				08A51ADF195B51880073CBA7 /* MSTransitionAnimator.m in Sources */,
 				08CAFC2F1946599600B83B52 /* MSHomeViewController.m in Sources */,
 				08CF2164193E5883009248A1 /* MSAppDelegate.m in Sources */,
+				08A51AFF195B85C10073CBA7 /* Mixpanel.m in Sources */,
+				08A51B02195B85C10073CBA7 /* MPNotification.m in Sources */,
 				084A5F06195350BE008EB2CA /* MSMatchViewController.m in Sources */,
+				08A51B05195B85C10073CBA7 /* MPSurvey.m in Sources */,
+				08A51B0D195B85C10073CBA7 /* UIImage+MPImageEffects.m in Sources */,
 				08EAEF4B193FDDBB00805776 /* MSConstants.m in Sources */,
+				08A51B07195B85C10073CBA7 /* MPSurveyNavigationController.m in Sources */,
 				0840B76D1954AC9D008E6D3C /* MSChatViewController.m in Sources */,
+				08A51B0B195B85C10073CBA7 /* UIColor+MPColor.m in Sources */,
+				08A51B09195B85C10073CBA7 /* MPSurveyQuestionViewController.m in Sources */,
 				08CF218D193E592D009248A1 /* MSLoginViewController.m in Sources */,
 				084A5F0A1953AB70008EB2CA /* MSMatchesViewController.m in Sources */,
 				08CAFC3B1946676E00B83B52 /* MSProfileViewController.m in Sources */,
 				08CAFC371946649000B83B52 /* MSEditProfileViewController.m in Sources */,
+				08A51B04195B85C10073CBA7 /* MPNotificationViewController.m in Sources */,
+				08A51B0A195B85C10073CBA7 /* NSData+MPBase64.m in Sources */,
+				08A51B0C195B85C10073CBA7 /* UIImage+MPAverageColor.m in Sources */,
+				08A51B0E195B85C10073CBA7 /* UIView+MPSnapshotImage.m in Sources */,
 				08CAFCF3194A735700B83B52 /* MSTestUser.m in Sources */,
 				08CF2160193E5883009248A1 /* main.m in Sources */,
 				08CAFC33194661C300B83B52 /* MSSettingsViewController.m in Sources */,
+				08A51B08195B85C10073CBA7 /* MPSurveyQuestion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

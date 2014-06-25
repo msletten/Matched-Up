@@ -136,8 +136,12 @@
 - (IBAction)settingsButtonPressed:(UIBarButtonItem *)sender
 {
 }
+//To save an event to Mixpanel first create an instance of mixpanel using the class method shared instance. You can specify what type of event you would like to track. In MatchedUp we will track Like and Dislike. Finally, we call the method flush to ensure that the event will be pushed immediately to Mixpanel.
 - (IBAction)likeButtonPressed:(UIButton *)sender
 {
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Like"];
+    [mixpanel flush];
     [self checkLike];
 }
 - (IBAction)infoButtonPressed:(UIButton *)sender
@@ -146,6 +150,9 @@
 }
 - (IBAction)dislikeButtonPressed:(UIButton *)sender
 {
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Dislike"];
+    [mixpanel flush];
     [self checkDislike];
 }
 

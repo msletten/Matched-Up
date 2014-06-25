@@ -15,4 +15,6 @@
     #import <Foundation/Foundation.h>
     #import <Parse/Parse.h>
     #import "MSConstants.h"
+    #import "Mixpanel.h"
+#define MIXPANEL_TOKEN @"5959e81e47784fefc58e940fb6f1f349"
 #endif
