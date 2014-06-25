@@ -8,7 +8,7 @@
 
 #import "MSEditProfileViewController.h"
 
-@interface MSEditProfileViewController ()
+@interface MSEditProfileViewController () <UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView *tagLineTextView;
 @property (strong, nonatomic) IBOutlet UIImageView *profilePictureImageView;
@@ -34,6 +34,9 @@
 	// Do any additional setup after loading the view.
     
     //The EditProfileViewController needs the ability to update our tag line and show our picture. Let's query for the photo, set it in our image view, and also set the tag line.
+    self.tagLineTextView.delegate = self;
+    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1/1.0];
+    
     PFQuery *query = [PFQuery queryWithClassName:kMSPhotoClassKey];
     [query whereKey:kMSPhotoUserKey equalTo:[PFUser currentUser]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
@@ -57,13 +60,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - IBActions
+#pragma mark - TextView Delegate
 
-- (IBAction)saveBarButtonPressed:(UIBarButtonItem *)sender
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    [[PFUser currentUser] setObject:self.tagLineTextView.text forKey:kMSUserTagLineKey];
-    [[PFUser currentUser] saveInBackground];
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([text isEqualToString:@"\n"])
+    {
+        [textView resignFirstResponder];
+        [[PFUser currentUser] setObject:self.tagLineTextView.text forKey:kMSUserTagLineKey];
+        [[PFUser currentUser] saveInBackground];
+        [self.navigationController popViewControllerAnimated:YES];
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
 }
 
 

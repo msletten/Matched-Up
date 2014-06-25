@@ -40,12 +40,13 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
     self.delegate = self;
     self.dataSource = self;
     
-    [[JSBubbleView appearance] setFont:[UIFont systemFontOfSize:16.0f]];
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    
+    [[JSBubbleView appearance] setFont:[UIFont fontWithName:@"HelveticaNeue" size:17.0f]];
     self.messageInputView.textView.placeHolder = @"New Message";
     [self setBackgroundColor:[UIColor colorWithRed:218/255.0f green:165/255.0f blue:32/255.0f alpha:1/1.0f]];
     self.currentUser = [PFUser currentUser];

@@ -42,8 +42,18 @@
     PFUser *user = self.profilePhoto[kMSPhotoUserKey];
     self.locationLabel.text = user[kMSUserProfileKey][kMSUserProfileLocationKey];
     self.ageLabel.text = [NSString stringWithFormat:@"%@", user[kMSUserProfileKey][kMSUserProfileAgeKey]];
-    self.statusLabel.text = user[kMSUserProfileKey][kMSUserProfileRelationshipStatusKey];
+    if (user[kMSUserProfileKey][kMSUserProfileRelationshipStatusKey] == nil)
+    {
+        self.statusLabel.text = @"Single";
+    }
+    else
+    {
+        self.statusLabel.text = user[kMSUserProfileKey][kMSUserProfileRelationshipStatusKey];
+    }
     self.tagLineLabel.text = user[kMSUserTagLineKey];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1/1.0];
+    self.title = user[kMSUserProfileKey][kMSUserProfileFirstNameKey];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,5 +61,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - IBActions
+
+- (IBAction)likeButtonPressed:(UIButton *)sender
+{
+    [self.delegate didPressLike];
+}
+- (IBAction)dislikeButtonPressed:(UIButton *)sender
+{
+    [self.delegate didPressDislike];
+}
+
 
 @end
